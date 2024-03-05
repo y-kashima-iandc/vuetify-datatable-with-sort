@@ -11,9 +11,8 @@
   };
   export default {
     data () {
-      return {
-        sortBy: [{ key: 'calories', order: 'asc' }] as readonly SortItem[],
-        headers: [
+      const sortBy: readonly SortItem[] = [{ key: 'calories', order: 'asc' }];
+      const headers: readonly Header[] = [
           {
             title: 'Dessert (100g serving)',
             align: 'start',
@@ -45,8 +44,8 @@
             sortable: true,
             key: 'iron'
           },
-        ] as readonly Header[],
-        desserts: [
+        ];
+      const desserts = [
           {
             name: 'Frozen Yogurt',
             calories: 200,
@@ -127,7 +126,11 @@
             protein: 7,
             iron: '6%',
           },
-        ],
+        ];
+      return {
+        sortBy: sortBy,
+        headers: headers,
+        desserts: desserts,
       };
     },
   }
